@@ -1,0 +1,67 @@
+// ==========================================
+// 1. Tokens de Color
+// Colores de la tienda y variantes de tractores
+// ==========================================
+$color-primary: #2d5a27; // Verde clásico agrícola
+$color-primary-dark: #1e3d1a;
+$color-tractor-red: #d32f2f; // Variante tractor rojo
+$color-tractor-blue: #1976d2; // Variante tractor azul
+$color-tractor-green: #388e3c; // Variante tractor verde
+$color-surface: #ffffff;
+$color-text: #212121;
+$color-border: #e0e0e0;
+
+// ==========================================
+// 2. Tokens de Espaciado
+// ==========================================
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+
+// ==========================================
+// 3. Tokens de Tipografía
+// ==========================================
+$font-family-base: system-ui, -apple-system, sans-serif;
+$font-size-title: 1.25rem;
+$font-size-price: 1.1rem;
+
+// ==========================================
+// 4. Componente de prueba (Metodología BEM)
+// Tarjeta de Tractor
+// ==========================================
+.tractor-card {
+    font-family: $font-family-base;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    padding: $spacing-md;
+    max-width: 320px;
+
+    // Elemento: Imagen
+    &__image {
+        width: 100%;
+        border-radius: 4px;
+        display: block;
+    }
+
+    // Elemento: Título del producto
+    &__title {
+        font-size: $font-size-title;
+        color: $color-text;
+        margin: $spacing-sm 0;
+    }
+
+    // Elemento: Precio
+    &__price {
+        font-size: $font-size-price;
+        color: $color-primary;
+        font-weight: bold;
+    }
+
+    // Modificador: Cuando la tarjeta está destacada
+    &--featured {
+        border-color: $color-primary;
+        box-shadow: 0 4px 12px rgba(45, 90, 39, 0.15);
+    }
+}
