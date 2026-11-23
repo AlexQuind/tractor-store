@@ -18,7 +18,7 @@ export interface Product {
 }
 // 3. Elemento dentro del carrito de compras
 // Derivado seleccionando solo los datos necesarios con el Utility Type "Pick"
-export type CartItem = Pick<Variant, 'id' | 'name' | 'price' | 'image'>;
+export type CartItem = Pick<Variant, 'id' | 'sku' | 'name' | 'price' | 'image'>;
 
 export interface LineItem {
     item: CartItem;

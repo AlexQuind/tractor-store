@@ -1,7 +1,7 @@
 // playground/main.ts
 // Implementación y verificación de modelos para The Tractor Store (Fase 1)
 
-import { Product, Cart, CartItem, LineItem, Result } from './models';
+import type { Product, Cart, CartItem, LineItem, Result } from './models.js';
 
 // 1. Datos simulados: Catálogo con nuestro primer tractor
 const classicTractor: Product = {
@@ -39,6 +39,9 @@ function findProductById(id: string): Result<Product, string> {
 
 // 3. Simulación de compra: Seleccionar variante y añadir al Carrito
 const selectedVariant = classicTractor.variants[0];
+if (!selectedVariant) {
+    throw new Error('No se encontró ninguna variante para este tractor.');
+}
 
 // Creamos el CartItem aprovechando los datos de la variante
 const itemToCart: CartItem = {
